@@ -8,4 +8,6 @@ const {
 router.get("/", getProducts); //FOR GETTING SIMPLE ALL PRODUCTS
 router.get("/:id", getProductById);  //TO GET A SPECIFIC PRODUCT BY AN ID
 
+
+
 module.exports = router;

@@ -19,8 +19,12 @@ const productSchema = mongoose.Schema({
   },
   imageUrl: {
     type: String,
-    required: true,
+    required: false,
   },
+  file:{
+    type:String,
+    required: true,
+  }
 });
 
 const Product = mongoose.model("product", productSchema);
