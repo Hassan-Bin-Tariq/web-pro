@@ -26,7 +26,7 @@ const CartScreen = () => {
     dispatch(removeFromCart(id));
   };
 
-  const getCartCount = () => {  //SUBTOTAL MA UPER TOTAL NUMBER OF IEMS SHOW KRNEY K LIA
+  const getCartCount = () => {  //SUBTOTAL MA UPER TOTAL NUMBER OF ITEMS SHOW KRNEY K LIA
     return cartItems.reduce((qty, item) => Number(item.qty) + qty, 0);
   };
 
@@ -35,9 +35,6 @@ const CartScreen = () => {
       .reduce((price, item) => price + item.price * item.qty, 0)
       .toFixed(2);
   };
-
-
-  
 
   return (
     <>
@@ -68,7 +65,8 @@ const CartScreen = () => {
           </div>
           <div>
           <li>
-            <Link to="/CheckOutScreen"> Check out</Link>
+            <Link to= "/CheckOutScreen"
+              > Check out</Link>
           </li>
           </div>
         </div>

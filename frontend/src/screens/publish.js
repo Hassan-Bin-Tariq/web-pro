@@ -43,7 +43,7 @@ const Publish = () => {
             <input type="text" name="description" value={product.description} placeholder="Your description" onChange={ handleChange }></input>
             <input type="number" name="price" value={product.price} placeholder="Your price" onChange={ handleChange }></input>
             <input type="number" name="countInStock" value={product.countInStock} placeholder="count In the Stock" onChange={ handleChange }></input>
-            <input type="file" name="imageUrl" value={product.imageUrl} placeholder="the Image Url" onChange={ handleChange } accept=".pdf,.doc,.png,.jpg" ></input>
+            <input type="file" name="imageUrl" value={product.imageUrl} placeholder="the Image Url" onChange={ handleChange } accept=".pdf,.doc,.png,.jpg,.jpeg" ></input>
             <input type="file" name="file" id="myFileInput" value={product.file} onChange={ handleChange } accept=".pdf,.doc,.png"></input>
             <div className="button" onClick={publish} >publish</div>
         </div>

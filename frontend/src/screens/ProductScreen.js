@@ -38,20 +38,20 @@ const ProductScreen = ({ match, history }) => {
       {loading ? <h2>Loading...</h2>:error ? <h2>{error}</h2>:(
         <>
         <div className="productscreen__left">
-            <div className="left__image">
+            <span className="left__image">
               <img 
               src={product.imageUrl} alt={product.name}/>
-            </div>
+            </span>
             <div className="left__info">
               <p className="left__name">{product.name}</p>
               <p>Price: ${product.price}</p>
               <p>Description: {product.description}</p>
               
-              <button type="button" onClick={ReadBook}>
-                Reader
+              <button type="button" onClick={ReadBook} style={{backgroundColor: 'Black', color: 'white'}}>
+                Read Book
               </button> 
             
-              <p>Fileeee: {product.file}</p>  
+              <p>File: {product.file}</p>  
             </div>
           </div>
           <div className="productscreen__right">
