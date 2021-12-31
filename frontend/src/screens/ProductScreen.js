@@ -1,11 +1,10 @@
 import "./ProductScreen.css";
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-
-
 // Actions
 import { getProductDetails } from "../redux/actions/productActions"; // DESIRED FUNCTION IPMORT KIA HA
 import { addToCart } from "../redux/actions/cartActions";
+
 
 
 const ProductScreen = ({ match, history }) => {
@@ -27,7 +26,14 @@ const ProductScreen = ({ match, history }) => {
     history.push(`/cart`);
   };
 
+  const ReadBook = () => {
+    //USING HTML INSIDE A JS FUNCTION HERE
+    window.location.replace("http://localhost/example/books/" + product.file);
+    console.log("hit");
+  };
+
   return (
+
     <div className="productscreen">
       {loading ? <h2>Loading...</h2>:error ? <h2>{error}</h2>:(
         <>
@@ -40,6 +46,12 @@ const ProductScreen = ({ match, history }) => {
               <p className="left__name">{product.name}</p>
               <p>Price: ${product.price}</p>
               <p>Description: {product.description}</p>
+              
+              <button type="button" onClick={ReadBook}>
+                Reader
+              </button> 
+            
+              <p>Fileeee: {product.file}</p>  
             </div>
           </div>
           <div className="productscreen__right">
@@ -51,7 +63,7 @@ const ProductScreen = ({ match, history }) => {
               <p>
                 Status:
                 <span>
-                 {product.countInstock>0 ?"In stock ":"Out of stock"}
+                 {product.countInStock>0 ?"In stock ":"Out of stock"}
                 </span>
               </p>
               <p>
@@ -76,6 +88,7 @@ const ProductScreen = ({ match, history }) => {
      
           
     </div>
+ 
   );
 };
 

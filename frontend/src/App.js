@@ -1,13 +1,12 @@
 
 import './App.css';
 import { useState } from "react";
-import { BrowserRouter as Router, Routes, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import HomeScreen from "./screens/HomeScreen";
 import ProductScreen from "./screens/ProductScreen";
 import CartScreen from "./screens/CartScreen";
-import register from "./screens/register";
-import login from "./screens/login";
 import Publish from './screens/publish'
+import CheckOut from './screens/CheckOutScreen';
 
 ////
 import Navbar from "./components/Navbar";
@@ -35,6 +34,7 @@ function App() {
         <Route exact path="/register"><Register/></Route>
         <Route exact path="/login"><Login setLoginUser={setLoginUser}/></Route>
         <Route exact path="/publish"><Publish/></Route>
+        <Route exact path="/CheckOutScreen"><CheckOut/></Route>
     </Switch>
   </Router>
   );

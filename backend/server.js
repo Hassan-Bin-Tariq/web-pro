@@ -56,7 +56,9 @@ app.post("/register",(req,res)=>{ //FRONTEND SE DATA LY K YAHAN IS FUNCTION TK P
 app.post("/publish",(req,res)=>{ //FRONTEND SE DATA LY K YAHAN IS FUNCTION TK POHANCHEY GA OR USER KA SCHEMA USE KR K DB MA SUT DY GA DTAA
   console.log(req.body)  
   const {name,description,price,countInStock,imageUrl,file} = req.body
+
   Product.findOne({name:name},(err,product)=>{
+    
     if(product){
       res.send({message:"product Already Exist"})
     } else{
@@ -65,8 +67,9 @@ app.post("/publish",(req,res)=>{ //FRONTEND SE DATA LY K YAHAN IS FUNCTION TK PO
        description: description,
        price: price,
        countInStock: countInStock,
-       imageUrl: imageUrl,
-       file: file
+       imageUrl: "http://localhost/example/pictures/"+imageUrl.replace(/^.*\\/, ""),
+       
+       file: file.replace(/^.*\\/, "")
      })
      product.save(err=>{
        if(err){

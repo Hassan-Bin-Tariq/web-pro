@@ -2,7 +2,6 @@ import "./CartScreen.css";
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-
 //CARTSCREEEN WALI FILE OR CARTITEM WALI FILE KAFI ZAYADA LINKED HN
 
 // Components
@@ -37,6 +36,9 @@ const CartScreen = () => {
       .toFixed(2);
   };
 
+
+  
+
   return (
     <>
       <div className="cartscreen">
@@ -65,7 +67,9 @@ const CartScreen = () => {
             <p>${getCartSubTotal()}</p> 
           </div>
           <div>
-            <button>Proceed To Checkout</button>
+          <li>
+            <Link to="/CheckOutScreen"> Check out</Link>
+          </li>
           </div>
         </div>
       </div>
